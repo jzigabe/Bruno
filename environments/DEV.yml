@@ -1,0 +1,6 @@
+name: DEV
+variables:
+  - name: baseUrl
+    value: http://localhost:8080/api
+  - name: token
+    value: eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9LHsiYXV0aG9yaXR5IjoiUk9MRV9VU0VSIn1dLCJzdWIiOiJqb3MuemlnYWJlQGdtYWlsLmNvbSIsImlhdCI6MTc3ODc3OTg5MiwiZXhwIjoxNzc4NzgxNjkyfQ.41fcys391oCp0N8cvyridj-AnAh1HCcIY7bAy4-uqRg

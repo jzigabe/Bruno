@@ -1,0 +1,41 @@
+info:
+  name: auth/signin
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/signin"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "jos.zigabe@gmail.com",
+        "password": "password"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        const body = res.getBody();
+
+        console.log("Login response:", JSON.stringify(body, null, 2));
+        console.log("Current env:", bru.getEnvName());
+
+        const token = body.token || body.accessToken || body.access_token;
+
+        if (!token) {
+          throw new Error("No token found in login response");
+        }
+
+        bru.setEnvVar("token", token, { persist: true });
+
+        console.log("Saved token:", bru.getEnvVar("token"));
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

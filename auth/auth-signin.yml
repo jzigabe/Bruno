@@ -21,17 +21,9 @@ runtime:
       code: |-
         const body = res.getBody();
 
-        console.log("Login response:", JSON.stringify(body, null, 2));
+        bru.setEnvVar("token", body.token);
+
         console.log("Current env:", bru.getEnvName());
-
-        const token = body.token || body.accessToken || body.access_token;
-
-        if (!token) {
-          throw new Error("No token found in login response");
-        }
-
-        bru.setEnvVar("token", token, { persist: true });
-
         console.log("Saved token:", bru.getEnvVar("token"));
 
 settings:

@@ -1,0 +1,24 @@
+meta {
+  name: Run code
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{basepoint}}/code-executor/run
+  body: json
+  auth: inherit
+}
+
+body:json {
+  public class Main {
+      public static void main(String[] args) {
+          System.out.println("Hello from Bruno!");
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

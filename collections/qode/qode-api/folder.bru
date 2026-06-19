@@ -1,0 +1,16 @@
+meta {
+  name: qode-api
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+vars:pre-request {
+  basepoint: {{entrypoint}}/api
+  token: {{userToken}}
+}

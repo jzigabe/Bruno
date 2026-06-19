@@ -1,0 +1,12 @@
+opencollection: 1.0.0
+info:
+  name: "Qode"
+  type: workspace
+
+collections:
+  - name: "Qode"
+    path: "collections/qode"
+
+specs:
+
+docs: ""

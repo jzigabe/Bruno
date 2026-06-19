@@ -1,0 +1,15 @@
+meta {
+  name: Application version
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{basepoint}}/application/version
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

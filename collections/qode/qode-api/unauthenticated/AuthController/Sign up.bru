@@ -1,0 +1,26 @@
+meta {
+  name: Sign up
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{basepoint}}/signup
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "firstname" : "John",
+    "lastname" : "Snow",
+    "username" : "King of the north",
+    "email" : "john.snow@email.com",
+    "password" : "password"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Get anonymous quiz
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{basepoint}}/quizzes/anonymous
+  body: none
+  auth: none
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

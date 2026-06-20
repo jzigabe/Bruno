@@ -1,0 +1,15 @@
+meta {
+  name: Get all topics
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{basepoint}}/topics
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}
